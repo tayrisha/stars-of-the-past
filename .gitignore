@@ -1,0 +1,57 @@
+# ----------------------
+# GLOBAL (Project root)
+# ----------------------
+
+# Node modules (backend or root installs)
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+
+# Output folders
+dist/
+build/
+coverage/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Vite and Next.js cache
+.vite/
+.next/
+out/
+
+# IDE files
+.vscode/
+.idea/
+
+# macOS or Linux file system junk
+*.swp
+*.swo
+
+# ----------------------
+# CLIENT-specific
+# ----------------------
+
+client/node_modules/
+client/dist/
+client/.env
+
+# Tailwind JIT cache
+client/.tailwind/
+
+# ----------------------
+# SERVER-specific
+# ----------------------
+
+server/node_modules/
+server/dist/
+server/.env
