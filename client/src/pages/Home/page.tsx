@@ -16,17 +16,30 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-6">Stars of the Past</h1>
+    <div
+      className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: `url('/assets/background.jpg')` }}
+    >
+      {/* Optional: dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/50 z-0" />
 
-      <input
-        type="date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-        className="border px-4 py-2 rounded mb-4"
-      />
+      {/* Main content */}
+      <div className="relative z-10 text-center px-4">
+        <h1 className="text-white text-4xl font-bold mb-6 drop-shadow">
+          Stars of the Past
+        </h1>
 
-      <DateButton label="Explore Your Cosmic Album" onClick={handleClick} />
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          className="border px-4 py-2 rounded mb-4 text-black"
+        />
+
+        <div>
+          <DateButton label="Explore Your Cosmic Album" onClick={handleClick} />
+        </div>
+      </div>
     </div>
   );
 };
