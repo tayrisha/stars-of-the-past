@@ -91,10 +91,8 @@ const Gallery = () => {
                 setIndex((i) => (i - 1 + data.length) % data.length)
               }
               className="
-              text-sm md:text-base italic 
-              px-3 py-2 md:px-6 md:py-2 
-              rounded-full border border-white/30 
-              bg-white/10 hover:bg-white/20 
+              text-sm md:text-base italic px-3 py-2 md:px-6 md:py-2 rounded-full border
+               border-white/30  bg-white/10 hover:bg-white/20 
               transition-all shadow-md backdrop-blur-sm 
               text-yellow-200 tracking-wide font-serif 
               drop-shadow-[1px_1px_2px_rgba(0,0,0,0.8)]

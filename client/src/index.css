@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hide the static month/year header in react-datepicker */
+@layer base {
+  .react-datepicker__current-month {
+    display: none !important;
+  }
+}

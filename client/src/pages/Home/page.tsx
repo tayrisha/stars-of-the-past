@@ -1,10 +1,11 @@
 // src/pages/Home/page.tsx
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import DateButton from './DateButton';
+import DateButton from './components/DateButton';
+import VintageDatePicker from './components/DatePicker'; 
 
 const Home = () => {
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState<Date | null>(null);
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -12,33 +13,26 @@ const Home = () => {
       alert('Please select a date.');
       return;
     }
-    navigate(`/gallery?birthday=${date}`);
+
+    const formattedDate = date.toISOString().split('T')[0]; 
+    navigate(`/gallery?birthday=${formattedDate}`); 
   };
 
   return (
     <div
-      className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: `url('/assets/background.jpg')` }}
+      className="relative min-h-screen bg-cover bg-center flex flex-col items-center pt-24 px-4"
+      style={{ backgroundImage: `url('/assets/background.jpg')` }} // fixed background syntax
     >
-      {/* Optional: dark overlay for readability */}
       <div className="absolute inset-0 bg-black/50 z-0" />
 
-      {/* Main content */}
-      <div className="relative z-10 text-center px-4">
-        <h1 className="text-white text-4xl font-bold mb-6 drop-shadow">
+      <div className="relative z-10 text-center w-full max-w-md">
+        <h1 className="text-white text-4xl font-bold mb-6 drop-shadow font-serif">
           Stars of the Past
         </h1>
 
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          className="border px-4 py-2 rounded mb-4 text-black"
-        />
+        <VintageDatePicker value={date} onChange={setDate} />
 
-        <div>
-          <DateButton label="Explore Your Cosmic Album" onClick={handleClick} />
-        </div>
+        <DateButton label="Explore Your Cosmic Album" onClick={handleClick} />
       </div>
     </div>
   );
