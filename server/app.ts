@@ -1,11 +1,10 @@
-// server/app.ts
+import dotenv from 'dotenv';
+dotenv.config();
 
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import starsOfThePastRoutes from './routes/starsOfThePast.route';
 
-dotenv.config();
 
 const app = express();
 
