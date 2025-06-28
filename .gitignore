@@ -55,3 +55,5 @@ client/.tailwind/
 server/node_modules/
 server/dist/
 server/.env
+
+.jest-cache/
