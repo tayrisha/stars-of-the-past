@@ -13,7 +13,7 @@ const config = {
   // Performance optimizations
   cache: true,
   cacheDirectory: '<rootDir>/.jest-cache',
-  maxWorkers: '80%', // Use half of available CPU cores
+  maxWorkers: '80%', 
   
   // Test discovery optimization  
   testMatch: [
