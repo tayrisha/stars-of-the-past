@@ -3,6 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import { fetchStars } from "@utils/fetchStars";
 import type { ApodResponse } from "~types/apod.types";
 import GalleryCard from "./components/GalleryCard";
+import GalleryLoading from "./components/GalleryLoading";
+import GalleryError from "./components/GalleryError";
 
 const Gallery = () => {
   const [searchParams] = useSearchParams();
@@ -51,8 +53,8 @@ const Gallery = () => {
   }, [handleKey]);
 
   if (!birthday) return <p>No birthday provided.</p>;
-  if (loading) return <p>Loading your stars... 🌌</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <GalleryLoading />;
+  if (error) return <GalleryError />;
   if (!data.length) return <p>No images found for this date.</p>;
 
   const current = data[index];
