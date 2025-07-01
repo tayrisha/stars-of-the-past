@@ -1,5 +1,3 @@
-// server/controllers/starsOfThePast.controller.ts
-
 import { RequestHandler } from 'express';
 import { fetchApodByDate } from '../services/nasa.service';
 import { ApodResponse } from '../types/apod.types';
