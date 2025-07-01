@@ -3,7 +3,6 @@ import { ApodResponse } from '../types/apod.types';
 
 const BASE_URL = 'https://api.nasa.gov/planetary/apod';
 const API_KEY = process.env.NASA_API_KEY;
-console.log('🔑 Using NASA API Key:', API_KEY); 
 
 
 const cache = new Map<string, ApodResponse>();
