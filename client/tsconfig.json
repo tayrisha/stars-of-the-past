@@ -4,6 +4,8 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-  "isolatedModules": true,
+  "compilerOptions": {
+    "isolatedModules": true
+  },
   "exclude": ["src/__tests__", "src/**/*.test.tsx", "src/**/*.test.ts"]
 }
