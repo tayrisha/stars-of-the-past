@@ -33,6 +33,14 @@ git clone https://github.com/your-username/stars-of-the-past.git
 cd stars-of-the-past
 ```
 
+### Environment Variables Setup
+Both the frontend and backend require environment variables for proper operation. Example file is provided in the server folder.
+
+Copy the example environment file and rename it to .env.
+
+The .env file includes:
+- VITE_API_URL — The URL of your backend API (use http://localhost:3000 for local development).
+- NASA_API_KEY — Your NASA API key (the public DEMO_KEY is included and works for most cases).
 ### Frontend
 
 ```sh
